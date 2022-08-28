@@ -14,7 +14,7 @@ if __name__ == "__main__":
     client_port = 8001
 
     dispatcher = dispatcher.Dispatcher()
-    dispatcher.map("/test", OnDataReceive)
+    dispatcher.map("/*", OnDataReceive)
 
     oscServer=osc_server.ThreadingOSCUDPServer((address,server_port), dispatcher)
     oscClient=udp_client.SimpleUDPClient(address, client_port)
